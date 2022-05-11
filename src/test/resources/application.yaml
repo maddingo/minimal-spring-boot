@@ -1,0 +1,16 @@
+server:
+  shutdown: graceful
+#  shutdown: immediate
+
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 10s
+
+debug: false
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.springframework.web: TRACE
