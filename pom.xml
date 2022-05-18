@@ -55,5 +55,6 @@
 
     <modules>
         <module>mvc</module>
+        <module>reactive</module>
     </modules>
 </project>
