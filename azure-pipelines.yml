@@ -14,7 +14,7 @@ pr:
   autoCancel: true
   branches:
     include:
-    - features/*
+    - feature/*
   paths:
     exclude:
     - README.md
