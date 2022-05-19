@@ -6,6 +6,15 @@
 trigger:
 - master
 
+pr:
+  autoCancel: true
+  branches:
+    include:
+    - features/*
+  paths:
+    exclude:
+    - README.md
+
 pool:
   vmImage: ubuntu-latest
 
@@ -19,4 +28,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'verify'
