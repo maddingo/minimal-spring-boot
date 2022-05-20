@@ -7,6 +7,9 @@ variables:
   MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
   MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
 
+trigger:
+- master
+
 pr:
   autoCancel: true
   branches:
