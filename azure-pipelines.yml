@@ -26,14 +26,16 @@ steps:
 - task: Cache@2
   inputs:
     key: 'maven | "$(Agent.OS)" | **/pom.xml'
-    restoreKeys: 'maven | "$(Agent.OS)" | maven'
+    restoreKeys: |
+      maven | "$(Agent.OS)"
+      maven
     path: $(MAVEN_CACHE_FOLDER)
   displayName: Cache Maven local repo
 
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
+    mavenOptions: '-Xmx3072m $(MAVEN_OPTS)'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.17'
     jdkArchitectureOption: 'x64'
