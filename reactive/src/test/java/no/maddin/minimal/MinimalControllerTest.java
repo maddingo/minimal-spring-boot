@@ -35,8 +35,7 @@ public class MinimalControllerTest {
             .uri("/now/utc")
             .exchange()
             .expectStatus().is2xxSuccessful()
-            .expectBody(TimeResponse.class).value(hasProperty("body", hasProperty("timeString", instanceOf(String.class))));
-
+            .expectBody(TimeResponse.class).value(hasProperty("timeString", instanceOf(String.class)));
     }
 
     @ParameterizedTest
@@ -51,6 +50,6 @@ public class MinimalControllerTest {
             .exchange()
             .expectStatus().is2xxSuccessful()
             .expectBody(WeatherResponse.class)
-            .value(hasProperty("body", hasProperty("temperature", containsString("°C"))));
+            .value(hasProperty("temperature", containsString("°C")));
     }
 }
