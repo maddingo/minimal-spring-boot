@@ -59,6 +59,25 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.spdx</groupId>
+                <artifactId>spdx-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <executions>
+                    <execution>
+                        <id>create-spdx</id>
+                        <goals><goal>createSPDX</goal></goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <excludedFilePatterns>
+                                <param>*.spdx</param>
+                            </excludedFilePatterns>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <modules>
